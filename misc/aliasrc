@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# alias ls="ls -ahN --color=always --group-directories-first"
+# alias ll="ls -ahlN --color=always --group-directories-first"
+alias ls="exa -a --group-directories-first"
+alias ll="exa -la --git --git-ignore --group-directories-first"
+alias tree="exa -T --git-ignore --group-directories-first"
+alias date="date +'%a %b %d %H:%M:%S %Z'"
+alias vi="nvim"
+alias cat="bat"

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Load pre-wm services
+. $XDG_CONFIG_HOME/misc/autostart.sh &
+
+# Load the wm
+exec bspwm
