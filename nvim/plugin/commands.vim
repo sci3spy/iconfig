@@ -3,6 +3,10 @@ augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank{timeout=300}
 augroup END
 
+augroup just_close
+    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
+augroup END
+
 augroup setSpelling
     autocmd!
     autocmd FileType markdown setlocal spell spelllang=en_us
