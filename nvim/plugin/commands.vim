@@ -7,6 +7,10 @@ augroup just_close
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
 augroup END
 
+augroup format
+    autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync()
+augroup END
+
 augroup setSpelling
     autocmd!
     autocmd FileType markdown setlocal spell spelllang=en_us
