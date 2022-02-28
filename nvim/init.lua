@@ -44,6 +44,23 @@ return require("packer").startup(function(use)
     end
   }
 
+  -- General purpose LSPs e.g. formaters etc.
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      local null_ls = require "null-ls"
+      local format = null_ls.builtins.formatting
+      null_ls.setup {
+        sources = {
+          format.stylua,
+          format.black,
+          format.prettier,
+          format.eslint_d,
+        },
+      }
+    end,
+  }
+
   -- Snippets
   use {
     "L3MON4D3/LuaSnip",
