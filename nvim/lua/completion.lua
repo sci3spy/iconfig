@@ -1,5 +1,4 @@
 local cmp = require("cmp")
-local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 
 vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
