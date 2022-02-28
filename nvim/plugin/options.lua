@@ -29,4 +29,3 @@ vim.opt.wildignore:append { "*.pyc", "**/.git/*" }
 vim.opt.path:append "**"
 vim.opt.shortmess:append "c"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
-
