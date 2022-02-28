@@ -52,7 +52,9 @@ return require("packer").startup(function(use)
       local format = null_ls.builtins.formatting
       null_ls.setup {
         sources = {
-          format.stylua,
+          format.stylua.with {
+            extra_args = { "--call-parentheses", "None", "--indent-type", "Spaces", "--indent-width", "2" }
+          },
           format.black,
           format.prettier,
           format.eslint_d,
