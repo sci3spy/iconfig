@@ -17,7 +17,7 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-local on_attach = function()
+local on_attach = function(client)
   local bufnr = { buffer = true }
   vim.keymap.set("n", "K", vim.lsp.buf.hover, bufnr)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufnr)
@@ -27,6 +27,9 @@ local on_attach = function()
   vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufnr)
   vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufnr)
   vim.keymap.set("n", "<leader>fr", vim.lsp.buf.formatting, bufnr)
+  
+  client.resolved_capabilities.document_formatting = false
+  client.resolved_capabilities.document_range_formatting = false
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
