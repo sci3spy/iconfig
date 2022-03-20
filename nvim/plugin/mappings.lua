@@ -33,3 +33,9 @@ vim.keymap.set("i", "<C-l>", function()
     luasnip.change_choice(1)
   end
 end)
+
+-- Disable arrow keys
+vim.keymap.set({ "n", "i", "v" }, "<Up>", "")
+vim.keymap.set({ "n", "i", "v" }, "<Down>", "")
+vim.keymap.set({ "n", "i", "v" }, "<Left>", "")
+vim.keymap.set({ "n", "i", "v" }, "<Right>", "")
